@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src="/js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>professores Cadastrados</h1>
+    <ul>
+        <% for( let c of professores ) { %>
+            <li>
+                <p>ID do professor: <%=c.id%> </p>
+                <p>Nome: <%=c.nomeprofessor%></p>
+                <p>Endereço: <%=c.endereco%></p>
+                <p>Contato: <%=c.contato%></p>
+                <a href='professor/<%=c.id%>'>Detalhes</a>
+                <a href='onclick="apagaMensagem(<%=c.id%>)''>apagar</a>
+                <br>
+            </li>
+        <% } %>
+    </ul>
+
+    <a href="/professor/novo">Novo comentário</a><br><br>
+    <a href="/alunos/">aluno cadastrados</a><br><br>
+
+</body>
+</html>
